@@ -19,10 +19,10 @@ public class HTMLExample {
             while ((line = reader.readLine()) != null) {
                 line = line.toLowerCase();
                 if (line.contains("/wiki") && line.contains("<p>")) {
-                    int startIndex = line.indexOf("/wiki");
-                    int endIndex = line.indexOf("\"", startIndex);
-                    if (endIndex > startIndex) {
-                        String wikiLink = line.substring(startIndex, endIndex);
+                    int n = line.indexOf("/wiki");
+                    int endIndex = line.indexOf("\"", n);
+                    if (endIndex > n) {
+                        String wikiLink = line.substring(n, endIndex);
                         System.out.println(wikiLink);
                     }
                 }
